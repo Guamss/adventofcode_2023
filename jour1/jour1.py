@@ -10,12 +10,13 @@ def get_numb(slice:str):
     for number in numbers_dict.keys():
         if slice.startswith(number):
             return numbers_dict[number]
+        
 sum = 0
 for line in contents:
     first_digit = None
     last_digit = None
-    for i, c in enumerate(line):
-        slice = line[i:]
+    for c in range(len(line)):
+        slice = line[c:]
         if not first_digit:
             first_digit = get_numb(slice)
         tmp = get_numb(slice)
